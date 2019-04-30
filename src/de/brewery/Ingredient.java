@@ -19,11 +19,19 @@ public class Ingredient {
         this.amount = amount;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
     /**
      * If processed we need to remove the amount.
      */
-    public void consumeAmount() {
-        this.amount = 0;
+    public void consumeAmount(double value) {
+        this.amount = this.amount - value;
     }
 
     /**

@@ -1,6 +1,7 @@
 package de.brewery;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -11,20 +12,22 @@ public class Recipe {
     private String name;
     private List<Ingredient> ingredients;
     private int time;
-    private double litre;
+
 
     /**
      * Creates a new recipe object.
      *
      * @param name this is the unique name of the recipe
      * @param time duration of brewing process in hours
-     * @param litre the amount of litre the recipe produces
      */
     public Recipe(String name, int time, double litre) {
         this.name = name;
         this.time = time;
-        this.litre = litre;
         this.ingredients = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
     }
 
     /**
@@ -36,16 +39,9 @@ public class Recipe {
         this.ingredients.add(in);
     }
 
-    /**
-     * Starts the simple brewing process.
-     *
-     * @return Returns the brewing time.
-     */
-    public double brew() {
-        for (Ingredient in: ingredients) {
-            in.consumeAmount();
-        }
-        return this.time;
+
+    public Iterator<Ingredient> getIngredients() {
+        return ingredients.iterator();
     }
 
     /**
@@ -59,7 +55,6 @@ public class Recipe {
                 "name='" + name + '\'' +
                 ", ingredients=" + ingredients +
                 ", time=" + time +
-                ", litre=" + litre +
                 '}';
     }
 }

@@ -1,5 +1,7 @@
 package de.brewery;
 
+import de.brewery.util.Log;
+
 public class Main {
 
     /**
@@ -18,9 +20,18 @@ public class Main {
         r.addIngredient(new Ingredient("water", 8));
         r.addIngredient(new Ingredient("hop", 5));
 
+
+        Stock stock = new Stock();
+        stock.addIngredient(new Ingredient("wheat", 50));
+        stock.addIngredient(new Ingredient("malt", 20));
+        stock.addIngredient(new Ingredient("water", 200));
+        stock.addIngredient(new Ingredient("hop", 100));
+
+        Log.info(stock.toString());
+
+
         // start the brewing process
-        System.out.println(r);
-        System.out.println("Brew time " + r.brew());
-        System.out.println(r);
+        Log.info("Brew time " + Process.brew(r, stock));
+        Log.info(stock.toString());
     }
 }
