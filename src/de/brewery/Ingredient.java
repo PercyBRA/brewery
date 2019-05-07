@@ -19,10 +19,20 @@ public class Ingredient {
         this.amount = amount;
     }
 
+    /**
+     * Returns the type of the ingredient.
+     *
+     * @return Type of ingredient.
+     */
     public String getType() {
         return type;
     }
 
+    /**
+     * Returns the amount of the ingredient.
+     *
+     * @return Amount of the ingredient.
+     */
     public double getAmount() {
         return amount;
     }

@@ -1,29 +1,61 @@
 package de.brewery.util;
 
-import java.sql.SQLOutput;
 
+/**
+ *  General purpose logging class.
+ *
+ */
 public class Log {
 
+    // control the log level
     private static int DEBUG_LEVEL = 2;
 
-    public static void debug(String msg) {
+    /**
+     * Prints debug information.
+     *
+     * @param msg Text to be printed
+      */
+    public static void debug(Object msg) {
         if (DEBUG_LEVEL >= 3)
             log("Debug : " + msg);
     }
-    public static void info(String msg) {
+
+    /**
+     * Prints general trace information.
+     *
+     * @param msg Text to be printed
+     */
+    public static void info(Object msg) {
         if (DEBUG_LEVEL >= 2)
             log("Info : " + msg);
     }
-    public static void warn(String msg) {
+
+    /**
+     * Prints warnings.
+     *
+     * @param msg Text to be printed
+     */
+    public static void warn(Object msg) {
         if (DEBUG_LEVEL >= 1)
             log("Warn : " + msg);
     }
-    public static void error(String msg) {
+
+    /**
+     * Prints errors and exceptions.
+     *
+     * @param msg Text to be printed
+     */
+    public static void error(Object msg) {
         if (DEBUG_LEVEL >= 0)
             log("Error : " + msg);
     }
 
-    private static void log(String msg) {
-        System.out.println(msg);
+    /**
+     * Prints everything.
+     *
+     * @param msg Text to be printed
+     */
+    private static void log(Object msg) {
+        System.out.println(msg.toString());
     }
 }

@@ -21,12 +21,12 @@ public class Main {
         r.addIngredient(new Ingredient("hop", 5));
 
 
+        // fill the stock
         Stock stock = new Stock();
         stock.addIngredient(new Ingredient("wheat", 50));
         stock.addIngredient(new Ingredient("malt", 20));
         stock.addIngredient(new Ingredient("water", 200));
         stock.addIngredient(new Ingredient("hop", 100));
-
         Log.info(stock.toString());
 
 

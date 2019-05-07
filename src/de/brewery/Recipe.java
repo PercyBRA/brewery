@@ -40,6 +40,11 @@ public class Recipe {
     }
 
 
+    /**
+     * Returns the list of ingredients.
+     *
+     * @return Ingredients
+     */
     public Iterator<Ingredient> getIngredients() {
         return ingredients.iterator();
     }
